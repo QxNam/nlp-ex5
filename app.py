@@ -2,8 +2,6 @@ import pickle
 import underthesea
 from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn import metrics
-from sklearn.svm import SVC
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 import streamlit as st
 
@@ -81,8 +79,15 @@ def main():
     pred = predict(data)
     with col2:
         st.markdown('<h2 style="text-align: center;">Prediction</h1>', unsafe_allow_html=True)
-        st.markdown(f'<h1 style="text-align: center; border: 2px solid green; margin-top: 30px; ; border-radius: 10px">{pred.upper()}</h1>', unsafe_allow_html=True)
-    st.caption('Modify by :blue[qxnam]')
+        st.markdown(f'<h1 style="text-align: center; border: 2px solid green; margin-top: 30px; ; border-radius: 10px; height: 100px">{pred.upper()}</h1>', unsafe_allow_html=True)
+        
+        st.markdown('<h3 style="text-align: left;">Topic prediction of Vietnamese text</h3>', unsafe_allow_html=True)
+        st.markdown('<h4 style="text-align: left;">🧑‍⚖️ Pháp luật</h4>', unsafe_allow_html=True)
+        st.markdown('<h4 style="text-align: left;">🧑‍⚕️ Sức khỏe</h4>', unsafe_allow_html=True)
+        st.markdown('<h4 style="text-align: left;">🧑‍🚀 Khoa học</h4>', unsafe_allow_html=True)
+        st.markdown('<h4 style="text-align: left;">🧑‍🦽 Xe</h1>', unsafe_allow_html=True)
+        st.markdown('<h4 style="text-align: left;">🧑‍🏫 Giáo dục</h4>', unsafe_allow_html=True)
+    st.caption('Modify by :blue[qxnam]', unsafe_allow_html=True)
     
 if __name__ == '__main__':
     main()
